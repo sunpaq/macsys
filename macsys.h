@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 /*
 COLOR
@@ -88,4 +89,7 @@ int resetColor();
 
 int macsys(const char* cmd);
 
-void showAllWindowHexColor();
+void showAllWindowsHexColor();
+
+unsigned int Sleep(unsigned int milisecs);
+

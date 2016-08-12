@@ -92,15 +92,20 @@ int macsys(const char* cmd)
 	}
 
 	if (strstr(cmd, "dir") != NULL) {
+		printf("--------\n");
 		system("echo Directory of $(pwd)");
 		return system("ls -all");
+	}
+
+	if (strstr(cmd, "cls") != NULL) {
+		return system("tput reset");
 	}
 
 	//fall back
 	return system(cmd);
 }
 
-void showAllWindowHexColor()
+void showAllWindowsHexColor()
 {
 	char buff[1024];
 	for (unsigned i = 0; i < 0xff; i++) {
@@ -109,4 +114,10 @@ void showAllWindowHexColor()
 		printf("%s\n", buff);
 	}
 }
+
+unsigned int Sleep(unsigned int milisecs)
+{
+	return usleep(milisecs * 1000);
+}
+
 
