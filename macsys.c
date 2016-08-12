@@ -15,8 +15,8 @@ int setColorWindowsHex(unsigned char hex)
 	unsigned char high = (hex & 0xF0) >> 4;
 	unsigned char low  = (hex & 0x0F);
 
-	DBColor bc;
-	DFColor fc;
+	DBColor bc = DBBlack;
+	DFColor fc = DFWhite;
 
 	DisMode mode = DisDefault;
 
