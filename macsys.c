@@ -68,11 +68,6 @@ int resetColor()
 
 int macsys(const char* cmd)
 {
-	if (strstr(cmd, "pause") != NULL) {
-		printf("Press any key to continue ...");
-		return getchar();
-	}
-
 	char *remain, *next;
 	char buff[1024];
 	if ((remain = strstr(cmd, "color")) != NULL) {
@@ -89,6 +84,16 @@ int macsys(const char* cmd)
 			return resetColor();
 		}
 		return setColorWindowsHex(hex);
+	}
+
+	if (strstr(cmd, "pause") != NULL) {
+		printf("Press any key to continue ...");
+		return getchar();
+	}
+
+	if (strstr(cmd, "dir") != NULL) {
+		system("echo Directory of $(pwd)");
+		return system("ls -all");
 	}
 
 	//fall back

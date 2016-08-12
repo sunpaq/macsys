@@ -12,6 +12,8 @@ int main(int argc, char const *argv[])
 	macsys("color 3");
 	printf("hello world\n");
 
+	macsys("dir");
+
 	macsys(" color ");
 	macsys(" pause ");
 
